@@ -51,7 +51,7 @@ class ticker_top_gui:
     self.buttons_frame  = Frame(bg="black")
     
     #-------------------------------------------------Make Labels-------------------------------------------------
-    titles  = ["Game","Team", " ML ", "+/-", "Tot"]
+    titles  = ["Game","Tem", " ML ", "+/-", "Tot"]
     widths  = [4,        14,    4,      4,      5]
     col     = 0
     self.text_grid  = []
