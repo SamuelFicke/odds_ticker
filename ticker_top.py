@@ -33,10 +33,14 @@ class ticker_top_gui:
     master.configure(background="black")
     master.title("Mike's Odds Ticker")
     
-    self.font             = "DS-Digital"
+    
     self.label_size       = 28
-    self.num_rows         = 50
-    self.num_cols         = 7
+    self.num_games        = 25
+    
+    
+    self.font             = "DS-Digital"
+    self.num_rows         = self.num_games * 2
+    self.num_cols         = 5
 
     
     #Make Frame to hold spotify and time frames
@@ -44,8 +48,9 @@ class ticker_top_gui:
     self.odds_frame     = tk_scrollbar_frame(master)
     self.buttons_frame  = Frame(bg="black")
     
-    #Make Labels
-    titles  = ["Bet #","Home",  "Away","ML Home","ML Away", "Spread", "Over/Under"]
+    #-------------------------------------------------Make Labels-------------------------------------------------
+    titles  = ["Bet #","Team", "ML", "Spread", "Over/Under"]
+    widths  = [4,        14,    5,      19,        5]
     col     = 0
     self.text_grid  = []
     self.label_grid = []
@@ -55,14 +60,7 @@ class ticker_top_gui:
     for col in range(self.num_cols):
       text_row.append(StringVar())
       text_row[col].set(titles[col])
-      if(col == 0):
-        label_row.append(Label(self.top_frame, textvariable=text_row[col], anchor='w', bg="black", fg="red", width=4, font=(self.font, self.label_size)))
-      elif(col == 3 or col == 4):
-        label_row.append(Label(self.top_frame, textvariable=text_row[col], anchor='w', bg="black", fg="red", width=9, font=(self.font, self.label_size)))
-      elif(col == 5):
-        label_row.append(Label(self.top_frame, textvariable=text_row[col], anchor='w', bg="black", fg="red", width=19, font=(self.font, self.label_size)))
-      else:
-        label_row.append(Label(self.top_frame, textvariable=text_row[col], anchor='w', bg="black", fg="red", width=14, font=(self.font, self.label_size)))
+      label_row.append(Label(self.top_frame, textvariable=text_row[col], anchor='w', bg="black", fg="red", width=widths[col]-1, font=(self.font, self.label_size)))
       label_row[col].grid(row=0,column=col*2)
       dummy_label = Label(self.top_frame, text=" ", anchor='w', bg="black", fg="white", width=2, font=(self.font, self.label_size))
       dummy_label.grid(row=0,column=col*2+1)
@@ -70,34 +68,38 @@ class ticker_top_gui:
       
     self.text_grid.append(text_row)
     self.label_grid.append(label_row)
+    #-------------------------------------------------Make Labels-------------------------------------------------
     
+    
+    #-------------------------------------------------Make Text Boxes for Data-------------------------------------------------
+    fg_color = "green"
     for row in range(self.num_rows):
       text_row  = []
       label_row = []
+      
+      if(row % 2 == 0):
+        if(fg_color == "dark orange"):
+          fg_color = "green"
+        else:
+          fg_color = "dark orange"
+      
       for col in range(self.num_cols):
         text_row.append(StringVar())
         text_row[col].set("row=" + str(row) + " col=" + str(col))
         
-        if(row % 2 == 0):
-          fg_color = "green"
-        else:
-          fg_color = "dark orange"
+
         
         if(col == 0):
-          label_row.append(Label(self.odds_frame.interior, textvariable=text_row[col], anchor='w', bg="black", fg="red", width=5, font=(self.font, self.label_size)))
-        elif(col == 3 or col == 4):
-          label_row.append(Label(self.odds_frame.interior, textvariable=text_row[col], anchor='w', bg="black", fg=fg_color, width=10, font=(self.font, self.label_size)))
-        elif(col == 5):
-          label_row.append(Label(self.odds_frame.interior, textvariable=text_row[col], anchor='w', bg="black", fg=fg_color, width=20, font=(self.font, self.label_size)))
+          label_row.append(Label(self.odds_frame.interior, textvariable=text_row[col], anchor='w', bg="black", fg="red", width=widths[col], font=(self.font, self.label_size)))
         else:
-          label_row.append(Label(self.odds_frame.interior, textvariable=text_row[col], anchor='w', bg="black", fg=fg_color, width=15, font=(self.font, self.label_size)))
+          label_row.append(Label(self.odds_frame.interior, textvariable=text_row[col], anchor='w', bg="black", fg=fg_color, width=widths[col], font=(self.font, self.label_size)))
         label_row[col].grid(row=row+1,column=col*2)
         dummy_label = Label(self.odds_frame.interior, text=" ", anchor='w', bg="black", fg="red", width=1, font=(self.font, self.label_size))
         dummy_label.grid(row=row+1,column=col*2+1)
         
       self.text_grid.append(text_row)
       self.label_grid.append(label_row)
-    
+    #-------------------------------------------------Make Text Boxes for Data-------------------------------------------------
 
     button_texts      = ["All Sports", "College FB", "NFL", "NBA", "NCAA Hoops"]
     button_cmds       = [self.all_sport_cb,self.ncaaf_cb,self.nfl_cb,self.nba_cb,self.ncaab_cb]
@@ -239,19 +241,30 @@ class ticker_top_gui:
       stops.append(len(data_to_print))
       
       #Print out the data we have
-      game_num        = 1
+      game_num        = 0
       stop_num        = 0
       sport_game_num  = 1
       for game in data_to_print:
-        if(game_num > stops[stop_num]):
+        if(game_num >= stops[stop_num]):
           stop_num        += 1
           sport_game_num  = 1
-        if(game_num <= self.num_rows):
-          self.text_grid[game_num][0].set((stop_num+1)*1000+sport_game_num)
-          col_num = 1
-          for item in game:
-            self.text_grid[game_num][col_num].set(item)
-            col_num += 1
+          
+        if(game_num < self.num_games):
+          #Game Number
+          self.text_grid[game_num*2+1][0].set((stop_num+1)*1000+sport_game_num)
+          self.text_grid[game_num*2+2][0].set("")
+          #Teams
+          self.text_grid[game_num*2+1][1].set(game[0])
+          self.text_grid[game_num*2+2][1].set(game[1])
+          #Money Line
+          self.text_grid[game_num*2+1][2].set(game[2])
+          self.text_grid[game_num*2+2][2].set(game[3])
+          #Spread
+          self.text_grid[game_num*2+1][3].set(game[4])
+          self.text_grid[game_num*2+2][3].set("")
+          #Over/Uner
+          self.text_grid[game_num*2+1][4].set(game[5])
+          self.text_grid[game_num*2+2][4].set("")         
           game_num        += 1
           sport_game_num  += 1
       
@@ -277,22 +290,34 @@ class ticker_top_gui:
       
 
       #Print out the data we have
-      game_num = 1
+      game_num = 0
       for game in data_to_print:
-        if(game_num <= self.num_rows):
-          self.text_grid[game_num][0].set(sport_option*1000+game_num)
-          col_num = 1
-          for item in game:
-            self.text_grid[game_num][col_num].set(item)
-            col_num += 1
+        if(game_num <= self.num_games):
+          #Game Number
+          self.text_grid[game_num*2+1][0].set(sport_option*1000+game_num+1)
+          self.text_grid[game_num*2+2][0].set("")
+          #Teams
+          self.text_grid[game_num*2+1][1].set(game[0])
+          self.text_grid[game_num*2+2][1].set(game[1])
+          #Money Line
+          self.text_grid[game_num*2+1][2].set(game[2])
+          self.text_grid[game_num*2+2][2].set(game[3])
+          #Spread
+          self.text_grid[game_num*2+1][3].set(game[4])
+          self.text_grid[game_num*2+2][3].set("")
+          #Over/Uner
+          self.text_grid[game_num*2+1][4].set(game[5])
+          self.text_grid[game_num*2+2][4].set("")         
           game_num += 1
+          
+    rows_printed = (game_num)*2;
 
     #Fill in the rest with blank spaces
-    if(game_num <= self.num_rows):
-      while(game_num <= self.num_rows):
+    if(rows_printed <= self.num_rows):
+      while(rows_printed <= self.num_rows):
         for col in range(self.num_cols):
-          self.text_grid[game_num][col].set("")
-        game_num += 1
+          self.text_grid[rows_printed][col].set("")
+        rows_printed += 1
     
 
 

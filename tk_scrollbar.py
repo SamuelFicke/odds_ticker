@@ -14,7 +14,7 @@ class tk_scrollbar_frame(Frame):
         Frame.__init__(self, parent, *args, **kw)            
 
         # create a canvas object and a vertical scrollbar for scrolling it
-        vscrollbar = Scrollbar(self, orient=VERTICAL, trough="black", thumb="black")
+        vscrollbar = Scrollbar(self, orient=VERTICAL)
         vscrollbar.pack(fill=Y, side=RIGHT, expand=FALSE)
         self.canvas = Canvas(self, bd=0, highlightthickness=0,
                         yscrollcommand=vscrollbar.set, bg="black",height=800)
