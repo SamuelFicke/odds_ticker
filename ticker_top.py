@@ -2,6 +2,7 @@ from tkinter import *
 from SBRscraper import *
 from datetime import date
 from time import *
+from tk_scrollbar import *
 
 import os
 
@@ -32,13 +33,15 @@ class ticker_top_gui:
     master.configure(background="black")
     master.title("Mike's Odds Ticker")
     
+    self.font             = "DS-Digital"
     self.label_size       = 28
-    self.num_rows         = 15
+    self.num_rows         = 50
     self.num_cols         = 7
 
     
     #Make Frame to hold spotify and time frames
-    self.odds_frame     = Frame(bg="black")
+    self.top_frame      = Frame(bg="black")
+    self.odds_frame     = tk_scrollbar_frame(master)
     self.buttons_frame  = Frame(bg="black")
     
     #Make Labels
@@ -53,15 +56,15 @@ class ticker_top_gui:
       text_row.append(StringVar())
       text_row[col].set(titles[col])
       if(col == 0):
-        label_row.append(Label(self.odds_frame, textvariable=text_row[col], anchor='w', bg="black", fg="red", width=5, font=("DS-Digital Italic", self.label_size)))
+        label_row.append(Label(self.top_frame, textvariable=text_row[col], anchor='w', bg="black", fg="red", width=4, font=(self.font, self.label_size)))
       elif(col == 3 or col == 4):
-        label_row.append(Label(self.odds_frame, textvariable=text_row[col], anchor='w', bg="black", fg="red", width=10, font=("DS-Digital Italic", self.label_size)))
+        label_row.append(Label(self.top_frame, textvariable=text_row[col], anchor='w', bg="black", fg="red", width=9, font=(self.font, self.label_size)))
       elif(col == 5):
-        label_row.append(Label(self.odds_frame, textvariable=text_row[col], anchor='w', bg="black", fg="red", width=20, font=("DS-Digital Italic", self.label_size)))
+        label_row.append(Label(self.top_frame, textvariable=text_row[col], anchor='w', bg="black", fg="red", width=19, font=(self.font, self.label_size)))
       else:
-        label_row.append(Label(self.odds_frame, textvariable=text_row[col], anchor='w', bg="black", fg="red", width=15, font=("DS-Digital Italic", self.label_size)))
+        label_row.append(Label(self.top_frame, textvariable=text_row[col], anchor='w', bg="black", fg="red", width=14, font=(self.font, self.label_size)))
       label_row[col].grid(row=0,column=col*2)
-      dummy_label = Label(self.odds_frame, text=" ", anchor='w', bg="black", fg="white", width=2, font=("DS-Digital Italic", self.label_size))
+      dummy_label = Label(self.top_frame, text=" ", anchor='w', bg="black", fg="white", width=2, font=(self.font, self.label_size))
       dummy_label.grid(row=0,column=col*2+1)
 
       
@@ -81,15 +84,15 @@ class ticker_top_gui:
           fg_color = "dark orange"
         
         if(col == 0):
-          label_row.append(Label(self.odds_frame, textvariable=text_row[col], anchor='w', bg="black", fg="red", width=5, font=("DS-Digital Italic", self.label_size)))
+          label_row.append(Label(self.odds_frame.interior, textvariable=text_row[col], anchor='w', bg="black", fg="red", width=5, font=(self.font, self.label_size)))
         elif(col == 3 or col == 4):
-          label_row.append(Label(self.odds_frame, textvariable=text_row[col], anchor='w', bg="black", fg=fg_color, width=10, font=("DS-Digital Italic", self.label_size)))
+          label_row.append(Label(self.odds_frame.interior, textvariable=text_row[col], anchor='w', bg="black", fg=fg_color, width=10, font=(self.font, self.label_size)))
         elif(col == 5):
-          label_row.append(Label(self.odds_frame, textvariable=text_row[col], anchor='w', bg="black", fg=fg_color, width=20, font=("DS-Digital Italic", self.label_size)))
+          label_row.append(Label(self.odds_frame.interior, textvariable=text_row[col], anchor='w', bg="black", fg=fg_color, width=20, font=(self.font, self.label_size)))
         else:
-          label_row.append(Label(self.odds_frame, textvariable=text_row[col], anchor='w', bg="black", fg=fg_color, width=15, font=("DS-Digital Italic", self.label_size)))
+          label_row.append(Label(self.odds_frame.interior, textvariable=text_row[col], anchor='w', bg="black", fg=fg_color, width=15, font=(self.font, self.label_size)))
         label_row[col].grid(row=row+1,column=col*2)
-        dummy_label = Label(self.odds_frame, text=" ", anchor='w', bg="black", fg="red", width=1, font=("DS-Digital Italic", self.label_size))
+        dummy_label = Label(self.odds_frame.interior, text=" ", anchor='w', bg="black", fg="red", width=1, font=(self.font, self.label_size))
         dummy_label.grid(row=row+1,column=col*2+1)
         
       self.text_grid.append(text_row)
@@ -101,7 +104,7 @@ class ticker_top_gui:
     self.button_list  = []
     count = 0
     for text in button_texts:
-      self.button_list.append(Button(self.buttons_frame, command=button_cmds[count], text=button_texts[count], bg="black", activebackground="green", fg="white", width = 20, font=("DS-Digital Italic", self.label_size)))
+      self.button_list.append(Button(self.buttons_frame, command=button_cmds[count], text=button_texts[count], bg="black", activebackground="green", fg="white", width = 20, font=(self.font, self.label_size)))
       self.button_list[count].grid(row=0,column=count)
       count += 1
     
@@ -111,6 +114,7 @@ class ticker_top_gui:
     
 
     #Pack party and everyone's invited
+    self.top_frame.pack(fill=BOTH)
     self.odds_frame.pack(fill=BOTH)
     self.buttons_frame.pack(fill=BOTH)
     
@@ -210,6 +214,7 @@ class ticker_top_gui:
     self.fill_in_boxes(NCAAB)
       
   def fill_in_boxes(self,sport_option):
+    self.odds_frame.reset_view()
     data_to_print = []
     
     
