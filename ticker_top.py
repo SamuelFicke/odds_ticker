@@ -51,7 +51,7 @@ class ticker_top_gui:
     self.buttons_frame  = Frame(bg="black")
     
     #-------------------------------------------------Make Labels-------------------------------------------------
-    titles  = ["Game","Tem", " ML ", "+/-", "Tot"]
+    titles  = ["Game","Team", " ML ", "+/-", "Tot"]
     widths  = [4,        14,    4,      4,      5]
     col     = 0
     self.text_grid  = []
@@ -317,9 +317,7 @@ class ticker_top_gui:
     #Fill in the rest with blank spaces
     if(rows_printed < self.num_rows-1):
       while(rows_printed < self.num_rows):
-        print(rows_printed) 
         for col in range(self.num_cols):
-          print(col)
           self.text_grid[rows_printed+1][col].set("")
         rows_printed += 1
     
