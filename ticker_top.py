@@ -34,8 +34,10 @@ class ticker_top_gui:
     master.title("Mike's Odds Ticker")
     
     
-    self.label_size       = 28
+    self.label_size       = 24
+    self.btn_txt_size     = 18
     self.num_games        = 25
+    self.button_width     = 8
     
     
     self.font             = "DS-Digital"
@@ -49,8 +51,8 @@ class ticker_top_gui:
     self.buttons_frame  = Frame(bg="black")
     
     #-------------------------------------------------Make Labels-------------------------------------------------
-    titles  = ["Bet #","Team", "ML", "Spread", "Over/Under"]
-    widths  = [4,        14,    5,      19,        5]
+    titles  = ["Game","Team", " ML ", "+/-", "Tot"]
+    widths  = [4,        14,    4,      4,      5]
     col     = 0
     self.text_grid  = []
     self.label_grid = []
@@ -106,7 +108,7 @@ class ticker_top_gui:
     self.button_list  = []
     count = 0
     for text in button_texts:
-      self.button_list.append(Button(self.buttons_frame, command=button_cmds[count], text=button_texts[count], bg="black", activebackground="green", fg="white", width = 20, font=(self.font, self.label_size)))
+      self.button_list.append(Button(self.buttons_frame, command=button_cmds[count], text=button_texts[count], bg="black", activebackground="green", fg="white", width = self.button_width, font=(self.font, self.btn_txt_size)))
       self.button_list[count].grid(row=0,column=count)
       count += 1
     
@@ -251,7 +253,7 @@ class ticker_top_gui:
           
         if(game_num < self.num_games):
           #Game Number
-          self.text_grid[game_num*2+1][0].set((stop_num+1)*1000+sport_game_num)
+          self.text_grid[game_num*2+1][0].set((stop_num+1)*1000+game_num+1)
           self.text_grid[game_num*2+2][0].set("")
           #Teams
           self.text_grid[game_num*2+1][1].set(game[0])
@@ -261,9 +263,9 @@ class ticker_top_gui:
           self.text_grid[game_num*2+2][2].set(game[3])
           #Spread
           self.text_grid[game_num*2+1][3].set(game[4])
-          self.text_grid[game_num*2+2][3].set("")
+          self.text_grid[game_num*2+2][3].set(game[5])
           #Over/Uner
-          self.text_grid[game_num*2+1][4].set(game[5])
+          self.text_grid[game_num*2+1][4].set(game[6])
           self.text_grid[game_num*2+2][4].set("")         
           game_num        += 1
           sport_game_num  += 1
@@ -292,7 +294,7 @@ class ticker_top_gui:
       #Print out the data we have
       game_num = 0
       for game in data_to_print:
-        if(game_num <= self.num_games):
+        if(game_num < self.num_games):
           #Game Number
           self.text_grid[game_num*2+1][0].set(sport_option*1000+game_num+1)
           self.text_grid[game_num*2+2][0].set("")
@@ -304,19 +306,21 @@ class ticker_top_gui:
           self.text_grid[game_num*2+2][2].set(game[3])
           #Spread
           self.text_grid[game_num*2+1][3].set(game[4])
-          self.text_grid[game_num*2+2][3].set("")
+          self.text_grid[game_num*2+2][3].set(game[5])
           #Over/Uner
-          self.text_grid[game_num*2+1][4].set(game[5])
+          self.text_grid[game_num*2+1][4].set(game[6])
           self.text_grid[game_num*2+2][4].set("")         
           game_num += 1
           
     rows_printed = (game_num)*2;
 
     #Fill in the rest with blank spaces
-    if(rows_printed <= self.num_rows):
-      while(rows_printed <= self.num_rows):
+    if(rows_printed < self.num_rows-1):
+      while(rows_printed < self.num_rows):
+        print(rows_printed) 
         for col in range(self.num_cols):
-          self.text_grid[rows_printed][col].set("")
+          print(col)
+          self.text_grid[rows_printed+1][col].set("")
         rows_printed += 1
     
 
@@ -326,7 +330,31 @@ class ticker_top_gui:
     
   def update_odds(self,master):
     todays_date = str(date.today()).replace('-','')
+
+  #Check the next few days for a college football game
+    ncaaf_ranked = []
+    count         = 0
+    ncaaf_date = int(todays_date)
     
+    unranked_lst = []
+    while(ncaaf_ranked == [] and count < 4):
+      print("NCAAF...date=" + str(ncaaf_date))
+      try:
+        [ncaaf_ranked,ncaaf_unranked] = get_odds(NCAAF,str(ncaaf_date))
+      except:
+        [ncaaf_ranked,ncaaf_unranked] = [[],[]]
+      unranked_lst += ncaaf_unranked
+      ncaaf_date   += 1
+      count        += 1
+    self.ncaaf_data_list  = ncaaf_ranked + unranked_lst
+    self.ncaaf_num_ranked = len(ncaaf_ranked)
+    
+    if(self.ncaaf_num_ranked > 0):
+      write_txt(self.ncaaf_data_list[0:self.ncaaf_num_ranked],"NCAAF_RANKED")
+    if(len(self.ncaaf_data_list) != self.ncaaf_num_ranked):
+      write_txt(self.ncaaf_data_list[self.ncaaf_num_ranked:],"NCAAF_UNRANKED")
+  
+   
   #Only Want Today for the NBA
     print("NBA...")
     self.nba_data_list = get_odds(NBA)
@@ -360,29 +388,7 @@ class ticker_top_gui:
       write_txt(self.ncaab_data_list[self.ncaab_num_ranked:],"NCAAB_UNRANKED")
    
     
-  #Check the next few days for a college football game
-    ncaaf_ranked = []
-    count         = 0
-    ncaaf_date = int(todays_date)
-    
-    unranked_lst = []
-    while(ncaaf_ranked == [] and count < 4):
-      print("NCAAF...date=" + str(ncaaf_date))
-      try:
-        [ncaaf_ranked,ncaaf_unranked] = get_odds(NCAAF,str(ncaaf_date))
-      except:
-        [ncaaf_ranked,ncaaf_unranked] = [[],[]]
-      unranked_lst += ncaaf_unranked
-      ncaaf_date   += 1
-      count        += 1
-    self.ncaaf_data_list  = ncaaf_ranked + unranked_lst
-    self.ncaaf_num_ranked = len(ncaaf_ranked)
-    
-    if(self.ncaaf_num_ranked > 0):
-      write_txt(self.ncaaf_data_list[0:self.ncaaf_num_ranked],"NCAAF_RANKED")
-    if(len(self.ncaaf_data_list) != self.ncaaf_num_ranked):
-      write_txt(self.ncaaf_data_list[self.ncaaf_num_ranked:],"NCAAF_UNRANKED")
-    
+  
     
     self.fill_in_boxes(ALL_SPORTS)
 
@@ -396,17 +402,18 @@ def write_txt(data_list,txt_name):
 def read_txt(txt_name):
   games_list = []
   file = open(txt_name + ".txt",'r')
-  eof = 0
-  while(eof == 0):
-    this_game = []
-    for ii in range(6):
-      data = file.readline()
-      if(ii==0 and data == ""):
-        eof = 1
-      this_game.append(data[:-1])
-    if(eof == 0):
-      games_list.append(this_game)
-  file.close()
+  with open(txt_name + ".txt", encoding="latin-1") as file:
+    eof = 0
+    while(eof == 0):
+      this_game = []
+      for ii in range(7):
+        data = file.readline()
+        if(ii==0 and data == ""):
+          eof = 1
+        this_game.append(data[:-1])
+      if(eof == 0):
+        games_list.append(this_game)
+    file.close()
   return games_list
 
       
