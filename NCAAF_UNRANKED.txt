@@ -1,0 +1,24 @@
+Memphis
+Wake Forest
++145
+-165
+Memphis -3.5
+72.5
+Army
+Houston
++200
+-235
+Army -6
+60
+Troy
+Buffalo
+-115
+-105
+Troy +1
+49.5
+Hawaii
+Louisiana Tech
+-105
+-115
+Hawaii -1
+61.5

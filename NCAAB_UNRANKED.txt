@@ -1,0 +1,450 @@
+American University
+Maryland-Eastern Shore
+
+
+American University 
+
+Georgetown
+Arkansas-Little Rock
+
+
+Georgetown -13
+157.5
+West Virginia
+Jacksonville State
+
+
+West Virginia -11
+145.5
+Georgia Tech
+Georgia
+
+
+Georgia Tech -5.5
+138.5
+North Carolina State
+USC Upstate
+
+
+North Carolina State 
+
+Campbell
+Alabama State
+
+
+Campbell 
+
+Holy Cross
+Siena
+
+
+Holy Cross 
+
+Lehigh
+St. Francis (PA)
+
+
+Lehigh 
+
+Villanova
+Connecticut
+
+
+Villanova -6
+146
+Central Michigan
+Jackson State
+
+
+Central Michigan 
+
+Marist
+Brown
+
+
+Marist -2
+135
+Drexel
+Temple
+
+
+Drexel +10.5
+153
+Army
+Niagara
+
+
+Army 
+
+Rutgers
+Columbia
+
+
+Rutgers -13
+138
+Maine
+Central Connecticut State
+
+
+Maine 
+
+New Hampshire
+Fairfield
+
+
+New Hampshire 
+
+Missouri State
+Arkansas-Pine Bluff
+
+
+Missouri State 
+
+Duquesne
+Eastern Kentucky
+
+
+Duquesne -10
+163.5
+Northern Iowa
+North Dakota
+
+
+Northern Iowa -8.5
+136.5
+Dayton
+Presbyterian
+
+
+Dayton 
+
+Miami (FL)
+Florida Atlantic
+
+
+Miami (FL) -16.5
+145.5
+South Carolina
+Clemson
+
+
+South Carolina +2.5
+144
+Bradley
+Southeastern Louisiana
+
+
+Bradley 
+
+Eastern Michigan
+Siena Heights
+
+
+Eastern Michigan 
+
+Syracuse
+Arkansas State
+
+
+Syracuse -20.5
+137.5
+Texas A&M
+Marshall
+
+
+Texas A&M -8
+154
+Yale
+Iona
+
+
+Yale -11
+158.5
+Arkansas
+Texas State
+
+
+Arkansas -11
+144
+Wagner
+Hartford
+
+
+Wagner 
+
+Harvard
+George Washington
+
+
+Harvard -14
+136.5
+Northern Illinois
+Chicago State
+
+
+Northern Illinois 
+
+Quinnipiac
+Stony Brook
+
+
+Quinnipiac 
+
+Old Dominion
+Morgan State
+
+
+Old Dominion 
+
+Cal State Northridge
+SIU-Edwardsville
+
+
+Cal State Northridge -1.5
+154.5
+Richmond
+High Point
+
+
+Richmond 
+
+Austin Peay
+Liberty
+
+
+Austin Peay 
+
+Boise State
+Pacific
+
+
+Boise State -7
+138.5
+Colorado
+Indiana State
+
+
+Colorado -7
+148
+Western Michigan
+Milwaukee
+
+
+Western Michigan -8
+140.5
+Samford
+UNC Greensboro
+
+
+Samford +3
+139
+UMKC
+Elon
+
+
+UMKC 
+
+Memphis
+Tennessee State
+
+
+Memphis -17
+158
+Western Kentucky
+Saint Mary's
+
+
+Western Kentucky +1.5
+143
+DePaul
+Boston College
+
+
+DePaul -4
+149.5
+Virginia Commonwealth
+Wichita State
+
+
+Virginia Commonwealth -5.5
+136
+New Mexico
+Pennsylvania
+
+
+New Mexico +2
+156.5
+Utah Valley
+Sam Houston State
+
+
+Utah Valley 
+
+Weber State
+Delaware State
+
+
+Weber State 
+
+Southern Illinois
+Winthrop
+
+
+Southern Illinois 
+
+Rider
+Northern Colorado
+
+
+Rider +1
+161.5
+Louisiana Tech
+Texas A&M-CC
+
+
+Louisiana Tech 
+
+Saint Joseph's (PA)
+Loyola (IL)
+
+
+Saint Joseph's (PA) -3.5
+143
+Long Beach State
+Colorado State
+
+
+Long Beach State -4
+152.5
+UC Santa Barbara
+Idaho State
+
+
+UC Santa Barbara -10
+145
+Howard
+Hampton
+
+
+Howard 
+
+Florida
+Florida Gulf Coast
+
+
+Florida -17
+133.5
+UC Riverside
+Loyola Marymount
+
+
+UC Riverside +10
+125.5
+San Francisco
+Stanford
+
+
+San Francisco -8.5
+138.5
+Evansville
+Green Bay
+
+
+Evansville -4.5
+160
+Hawaii
+UNLV
+
+
+Hawaii PK-10
+138.5
+Maryland
+Seton Hall
+
+
+Maryland -8
+144
+Kansas State
+Vanderbilt
+
+
+Kansas State -3.5
+134
+Arizona
+UC Davis
+
+
+Arizona -17
+129.5
+San Diego State
+BYU
+
+
+San Diego State -2
+154.5
+Fresno State
+Tennessee-Martin
+
+
+Fresno State -17
+156
+New Mexico State
+Drake
+
+
+New Mexico State -7
+143
+Missouri
+Illinois
+
+
+Missouri -1
+141
+St. John's
+Sacred Heart
+
+
+St. John's 
+
+South Dakota State
+Montana
+
+
+South Dakota State -8
+146
+Oral Roberts
+Tulsa
+
+
+Oral Roberts +8.5
+142
+Texas Rio Grande Valley
+McNeese State
+
+
+Texas Rio Grande Valley 
+
+SMU
+Cornell
+
+
+SMU -14
+140.5
+Grand Canyon
+Mississippi Valley State
+
+
+Grand Canyon 
+
+Washington State
+San Diego
+
+
+Washington State +6
+152.5
+Bucknell
+Rhode Island
+
+
+Bucknell +5
+141.5
