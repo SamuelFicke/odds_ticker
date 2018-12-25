@@ -247,8 +247,8 @@ def get_odds(sport, my_date=0):
                       ML_list[game_num*2][1], 
                       ML_list[game_num*2][3], 
                       ML_list[game_num*2+1][3], 
-                      spread_list[game_num*2+1][3],
                       spread_list[game_num*2][3],
+                      spread_list[game_num*2+1][3],
                       totals_list[game_num*2][3]
                     ]
       formatted_data.append(this_game)

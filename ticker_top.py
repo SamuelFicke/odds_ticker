@@ -6,6 +6,8 @@ from tk_scrollbar import *
 
 import os
 
+txt_path = '/home/pi/Projects/odds_ticker/'
+
 second_update   = 1000
 hourly_update   = 1000*60*60
 daily_update    = 1000*60*60*24
@@ -51,7 +53,7 @@ class ticker_top_gui:
     self.buttons_frame  = Frame(bg="black")
     
     #-------------------------------------------------Make Labels-------------------------------------------------
-    titles  = ["Game","Team", " ML ", "+/-", "Tot"]
+    titles  = ["Bet","Team", " ML ", "+/-", "Tot"]
     widths  = [4,        14,    4,      4,      5]
     col     = 0
     self.text_grid  = []
@@ -124,32 +126,22 @@ class ticker_top_gui:
     
     
     
-    #Call Update Functions
-    try:
-      stat = os.stat("NBA.txt")
-      update_time = stat.st_mtime
-    except:
-      update_time = 0
+    self.nba_data_list    = read_txt("NBA")
       
-    if(time() >= update_time + hour):
-      master.after(second_update, lambda: self.update_odds(master))
-    else:
-      self.nba_data_list    = read_txt("NBA")
+    self.nfl_data_list    = read_txt("NFL")
       
-      self.nfl_data_list    = read_txt("NFL")
+    ncaab_ranked          = read_txt("NCAAB_RANKED")
+    ncaab_unranked        = read_txt("NCAAB_UNRANKED")
+    self.ncaab_data_list  = ncaab_ranked + ncaab_unranked
+    self.ncaab_num_ranked = len(ncaab_ranked)
       
-      ncaab_ranked          = read_txt("NCAAB_RANKED")
-      ncaab_unranked        = read_txt("NCAAB_UNRANKED")
-      self.ncaab_data_list  = ncaab_ranked + ncaab_unranked
-      self.ncaab_num_ranked = len(ncaab_ranked)
+    ncaaf_ranked          = read_txt("NCAAF_RANKED")
+    ncaaf_unranked        = read_txt("NCAAF_UNRANKED")
+    self.ncaaf_data_list  = ncaaf_ranked + ncaaf_unranked
+    self.ncaaf_num_ranked = len(ncaaf_ranked)
       
-      ncaaf_ranked          = read_txt("NCAAF_RANKED")
-      ncaaf_unranked        = read_txt("NCAAF_UNRANKED")
-      self.ncaaf_data_list  = ncaaf_ranked + ncaaf_unranked
-      self.ncaaf_num_ranked = len(ncaaf_ranked)
-      
-      self.fill_in_boxes(ALL_SPORTS)
-      master.after(hourly_update, lambda: self.update_odds(master))
+    self.fill_in_boxes(ALL_SPORTS)
+    master.after(second_update*10, lambda: self.update_odds(master))
       
   
     
@@ -323,10 +315,15 @@ class ticker_top_gui:
     
 
 
-
     
     
   def update_odds(self,master):
+
+  #Let User Know Updates are being pulled
+    self.text_grid[1][1].set("UPDATING...")
+    self.text_grid[2][1].set("NCAA Football")
+    sleep(10)
+    
     todays_date = str(date.today()).replace('-','')
 
   #Check the next few days for a college football game
@@ -389,9 +386,11 @@ class ticker_top_gui:
   
     
     self.fill_in_boxes(ALL_SPORTS)
+    
+    master.after(hourly_update*6, lambda: self.update_odds(master))
 
 def write_txt(data_list,txt_name):
-  file = open(txt_name + ".txt",'w')
+  file = open(txt_path + txt_name + ".txt",'w')
   for game in data_list:
     for item in game:
       file.write(item + "\n")
@@ -400,7 +399,7 @@ def write_txt(data_list,txt_name):
 def read_txt(txt_name):
   games_list = []
   file = open(txt_name + ".txt",'r')
-  with open(txt_name + ".txt", encoding="latin-1") as file:
+  with open(txt_path + txt_name + ".txt", encoding="latin-1") as file:
     eof = 0
     while(eof == 0):
       this_game = []
