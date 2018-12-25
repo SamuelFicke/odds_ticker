@@ -331,7 +331,7 @@ class ticker_top_gui:
     ncaaf_date = int(todays_date)
     
     unranked_lst = []
-    while(ncaaf_ranked == [] and count < 4):
+    while(count < 7):
       print("NCAAF...date=" + str(ncaaf_date))
       try:
         [ncaaf_ranked,ncaaf_unranked] = get_odds(NCAAF,str(ncaaf_date))
@@ -359,7 +359,7 @@ class ticker_top_gui:
     nfl_data_list = []
     count         = 0
     nfl_date = int(todays_date)
-    while(count < 4):
+    while(count < 7):
       print("NFL...date=" + str(nfl_date))
       nfl_data_list_day = get_odds(NFL,str(nfl_date))
       nfl_data_list += nfl_data_list_day
