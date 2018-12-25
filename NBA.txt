@@ -9,8 +9,8 @@ Houston
 Oklahoma City
 -125
 +105
--2
-+2
+-1.5
++1.5
 221.5
 Boston
 Philadelphia
