@@ -322,7 +322,6 @@ class ticker_top_gui:
   #Let User Know Updates are being pulled
     self.text_grid[1][1].set("UPDATING...")
     self.text_grid[2][1].set("NCAA Football")
-    sleep(10)
     
     todays_date = str(date.today()).replace('-','')
 
