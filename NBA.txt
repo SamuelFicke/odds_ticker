@@ -1,35 +1,35 @@
 New York
 Milwaukee
--575
 +450
--10
+-575
 +10
+-10
 226.5
 Houston
 Oklahoma City
--125
 +105
--1.5
+-125
 +1.5
+-1.5
 221.5
 Boston
 Philadelphia
-+170
 -200
-+5
++170
 -5
-221.5
++5
+222
 Golden State
 L.A. Lakers
-+350
 -440
-+9
++350
 -9
++9
 233.5
 Utah
 Portland
-+225
 -275
-+6.5
++225
 -6.5
-213.5
++6.5
+214.5

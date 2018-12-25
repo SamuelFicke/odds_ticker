@@ -1,28 +1,28 @@
 Charlotte
 Colorado
--1370
 +970
--14
+-1370
 +14
+-14
 132.5
 Rhode Island
 Hawaii
-+185
 -215
-+5
++185
 -5
-134
++5
+135
 Bucknell
 UNLV
--160
 +140
--3
+-160
 +3
+-3
 147.5
 TCU
 Indiana State
-+585
 -785
-+11.5
++585
 -11.5
++11.5
 147.5
