@@ -398,7 +398,6 @@ def write_txt(data_list,txt_name):
   
 def read_txt(txt_name):
   games_list = []
-  file = open(txt_name + ".txt",'r')
   with open(txt_path + txt_name + ".txt", encoding="latin-1") as file:
     eof = 0
     while(eof == 0):
