@@ -2,9 +2,9 @@ Charlotte
 Colorado
 -1370
 +970
--14.5
-+14.5
-132
+-14
++14
+132.5
 Rhode Island
 Hawaii
 +185
