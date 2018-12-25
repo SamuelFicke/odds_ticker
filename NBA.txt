@@ -1,42 +1,35 @@
-L.A. Clippers
-Denver
-
-
-L.A. Clippers -1
-218.5
-Washington
-Phoenix
-
-
-Washington 
-
-Philadelphia
-Toronto
-
-
-Philadelphia -4.5
-220
-Miami
+New York
 Milwaukee
-
-
-Miami +3
-215.5
+-575
++450
+-10
++10
+226.5
 Houston
-San Antonio
-
-
-Houston -5.5
-215.5
-Golden State
-Dallas
-
-
-Golden State -11.5
-225
-Utah
 Oklahoma City
-
-
-Utah PK-10
-218
+-125
++105
+-2
++2
+221.5
+Boston
+Philadelphia
++170
+-200
++5
+-5
+221.5
+Golden State
+L.A. Lakers
++350
+-440
++9
+-9
+233.5
+Utah
+Portland
++225
+-275
++6.5
+-6.5
+213.5
