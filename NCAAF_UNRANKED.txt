@@ -1,14 +1,364 @@
-Georgia Tech
-Minnesota
--215
-+185
--5.5
-+5.5
-57
-California
+Alabama State
+Prairie View A&M
+
+
+
+
+
+Mississippi State
+Ole Miss
+-130
++110
+-2.5
++2.5
+58
+Texas
+Texas Tech
+-355
++285
+-10
++10
+63.5
+Central Michigan
+Toledo
+-380
++300
+-10.5
++10.5
+64.5
+Eastern Michigan
+Kent State
+-190
++165
+-4.5
++4.5
+66.5
+Ball State
+Miami (OH)
+-155
++135
+-3.5
++3.5
+55.5
+Buffalo
+Bowling Green
+-2465
++1515
+-29
++29
+51
+Arkansas
+Missouri
++370
+-470
++13
+-13
+53
+Washington
+Washington State
+-290
++240
+-7.5
++7.5
+63.5
 TCU
--120
-+100
+West Virginia
+-545
++420
+-13.5
++13.5
+43.5
+South Alabama
+Arkansas State
++330
+-420
++11
+-11
+54.5
+UCF
+South Florida
+-1505
++1055
+-23
++23
+63
+Kentucky
+Louisville
+-155
++135
+-3
++3
+52.5
+Monmouth
+Holy Cross
+
+
+
+
+
+Coastal Carolina
+Texas State
+-275
++225
+-7
++7
+53.5
+Purdue
+Indiana
++195
+-230
+-8
++8
+42.5
+Illinois
+Northwestern
+-325
++265
++6.5
+-6.5
+56.5
+East Carolina
+Tulsa
++180
+-210
++5.5
+-5.5
+61
+Marshall
+Florida International
+-300
++240
+-7.5
++7.5
+49.5
+Syracuse
+Wake Forest
++155
+-180
++4
+-4
+68.5
+Austin Peay
+Furman
+
+
+
+
+
+Albany
+Central Connecticut State
+
+
+
+
+
+Air Force
+Wyoming
+-420
++330
+-10.5
++10.5
+41
+Liberty
+New Mexico State
+-550
++425
+-14
++14
+65.5
+Western Kentucky
+Middle Tennessee
+-325
++265
++9.5
+-9.5
+50
+Old Dominion
+Charlotte
++285
+-355
+-8
++8
+47.5
+Southeast Missouri State
+Illinois State
+
+
+
+
+
+Northern Iowa
+San Diego
+
+
+
+
+
+Nevada
+UNLV
+-285
++235
+-7
++7
+52
+UTEP
+Rice
++210
+-250
++6.5
+-6.5
+44
+Duke
+Miami (FL)
++275
+-345
++9
+-9
+45
+Temple
+Connecticut
+
+
+-27.5
++27.5
+48.5
+Michigan State
+Maryland
+-1505
++1055
+-22.5
++22.5
+48
+Louisiana Tech
+UTSA
+-1170
++820
+-20.5
++20.5
+57
+Florida Atlantic
+Southern Miss
+-325
++265
+-9
++9
+51
+Southeastern Louisiana
+Villanova
+
+
+-3.5
++3.5
+71
+SMU
+Tulane
+-170
++150
++3
+-3
+50
+North Texas
+UAB
++135
+-155
++10.5
+-10.5
+63
+Tennessee
+Vanderbilt
+-1370
++970
+-19.5
++19.5
+65.5
+New Mexico
+Utah State
++330
+-420
++16.5
+-16.5
+48.5
+Nicholls State
+North Dakota
+
+
+
+
+
+Wofford
+Kennesaw State
+
+
+
+
+
+Grambling State
+Southern University
+
+
+
+
+
+Georgia Southern
+Georgia State
+-290
++240
+-7.5
++7.5
+57.5
+North Carolina State
+North Carolina
++290
+-360
++10
+-10
+56
+Kansas State
+Iowa State
++180
+-210
++5.5
+-5.5
+45.5
+Louisiana-Lafayette
+Louisiana-Monroe
+-1085
++785
+-20
++20
+70
+San Diego State
+Brigham Young
++135
+-155
++3
+-3
+39.5
+Arizona State
+Arizona
+-505
++380
+-13.5
++13.5
+59.5
+San Jose State
+Fresno State
++115
+-135
++2.5
+-2.5
+64
+UCLA
+California
+-115
+-105
 -1
 +1
-38
+51
+Hawaii
+Army
+-140
++120
+-2.5
++2.5
+55

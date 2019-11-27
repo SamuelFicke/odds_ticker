@@ -1,28 +1,252 @@
-Charlotte
-Colorado
-+970
--1370
-+14
--14
+Old Dominion
+Loyola Chicago
++160
+-185
++3.5
+-3.5
+118
+Iowa State
+Michigan
++130
+-150
++2.5
+-2.5
+135
+Boston University
+Tennessee-Martin
+-175
++155
+-4
++4
+144
+Weber State
+Northeastern
++240
+-290
++5.5
+-5.5
+127
+Murray State
+Drake
++115
+-135
++2
+-2
 132.5
+Washington State
+Colorado State
+-105
+-115
+PK-10
+PK-10
+140
+Boston College
+Saint Louis
+-135
++115
+-1.5
++1.5
+134
+Georgia State
+Charlotte
+-245
++205
+-6
++6
+135
+Tulsa
+South Carolina State
+
+
+-19.5
++19.5
+137.5
+North Alabama
+Mississippi Valley State
+
+
+-20
++20
+147
+Furman
+Texas-Arlington
+-270
++220
+-6
++6
+138.5
+Northern Colorado
+Gardner-Webb
+-190
++165
+-4
++4
+126.5
 Rhode Island
-Hawaii
+Manhattan
+-930
++680
+-12
++12
+130
+Wright State
+Miami (OH)
+-145
++125
+-2.5
++2.5
+141
+Nebraska
+South Florida
++120
+-140
++2.5
+-2.5
+135
+Penn State
+Ole Miss
+-140
++120
+-2.5
++2.5
+133.5
+Santa Clara
+Denver
+-1350
++950
+-14.5
++14.5
+141.5
+Bradley
+Kansas State
++210
+-260
++5.5
+-5.5
+118.5
+Northern Iowa
+South Carolina
+-105
+-115
++1
+-1
+126
+Delaware
+Stony Brook
+-215
++185
+-4.5
++4.5
+132.5
+Purdue Fort Wayne
+Niagara
+-515
++390
+-9
++9
+146
+Syracuse
+Oklahoma State
+-135
++115
+-2
++2
+125
+Monmouth
+Norfolk State
+-285
++235
+-6.5
++6.5
+127
+SMU
+Hartford
+-2665
++1615
+-20
++20
+126.5
+George Mason
+New Mexico State
++205
+-245
++5.5
+-5.5
+129.5
+La Salle
+South Alabama
++175
+-205
++5
+-5
+136.5
+Arkansas-Little Rock
+Alcorn State
+-1465
++1015
+-15.5
++15.5
+131.5
+Cal State Fullerton
+Southeast Missouri State
 -215
 +185
 -5
 +5
 135
-Bucknell
-UNLV
-+140
--160
-+3
--3
-147.5
-TCU
-Indiana State
--785
-+585
--11.5
-+11.5
-147.5
+South Dakota State
+Samford
+-195
++170
+-4.5
++4.5
+145
+West Virginia
+Wichita State
+-115
+-105
+-1
++1
+127
+Chaminade
+Georgia
+
+
++25.5
+-25.5
+
+California Baptist
+South Dakota
++105
+-125
++1.5
+-1.5
+145.5
+San Diego
+Hofstra
++100
+-120
++1
+-1
+142.5
+UC Santa Barbara
+Portland State
+-420
++330
+-8.5
++8.5
+151
+Oregon State
+San Jose State
+-2440
++1490
+-20
++20
+142.5
+BYU
+Virginia Tech
++100
+-120
++1
+-1
+136

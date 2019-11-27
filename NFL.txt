@@ -1,0 +1,112 @@
+Detroit
+Chicago
++180
+-210
++4
+-4
+37.5
+Dallas
+Buffalo
+-310
++250
+-6.5
++6.5
+47
+Atlanta
+New Orleans
++250
+-310
++6.5
+-6.5
+48.5
+Cincinnati
+N.Y. Jets
++155
+-175
++3.5
+-3.5
+41.5
+Indianapolis
+Tennessee
+-135
++115
+-2.5
++2.5
+43.5
+Pittsburgh
+Cleveland
++110
+-130
++2.5
+-2.5
+39.5
+Baltimore
+San Francisco
+-270
++220
+-6
++6
+47
+Miami
+Philadelphia
++355
+-445
++9.5
+-9.5
+44.5
+Carolina
+Washington
+-475
++375
+-10
++10
+39
+N.Y. Giants
+Green Bay
++240
+-290
++6.5
+-6.5
+45.5
+Jacksonville
+Tampa Bay
+-115
+-105
+PK-10
+PK-10
+48.5
+Arizona
+L.A. Rams
++135
+-155
++3
+-3
+47.5
+Kansas City
+Oakland
+-470
++370
+-9.5
++9.5
+51.5
+Denver
+L.A. Chargers
++125
+-145
++3
+-3
+38.5
+Houston
+New England
++150
+-170
++3.5
+-3.5
+45.5
+Seattle
+Minnesota
+-155
++135
+-3
++3
+49.5

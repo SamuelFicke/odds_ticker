@@ -1,35 +1,98 @@
-New York
-Milwaukee
-+450
--575
-+10
--10
-226.5
-Houston
-Oklahoma City
+Cleveland
+Orlando
 +105
 -125
 +1.5
 -1.5
-221.5
+207
 Boston
-Philadelphia
--200
-+170
--5
-+5
-222
-Golden State
-L.A. Lakers
--440
-+350
--9
-+9
-233.5
+Brooklyn
+-350
++280
+-8
++8
+213.5
+Indiana
 Utah
-Portland
--275
-+225
--6.5
+-135
++115
+-2.5
++2.5
+210
+Philadelphia
+Sacramento
+-505
++380
+-9.5
++9.5
+209.5
+Charlotte
+Detroit
++150
+-170
++3
+-3
+213.5
+Toronto
+New York
+-605
++455
+-10
++10
+211
+Milwaukee
+Atlanta
+-1320
++920
+-14.5
++14.5
+239.5
+Houston
+Miami
+-345
++275
+-8
++8
+225.5
+Memphis
+L.A. Clippers
++270
+-330
++7
+-7
+226.5
+San Antonio
+Minnesota
+-140
++120
+-2.5
++2.5
+228
+Phoenix
+Washington
+-340
++270
+-7.5
++7.5
+240.5
+New Orleans
+L.A. Lakers
++235
+-285
 +6.5
-214.5
+-6.5
+231.5
+Portland
+Oklahoma City
+-145
++125
+-2.5
++2.5
+219
+Golden State
+Chicago
++125
+-145
++2.5
+-2.5
+215.5
