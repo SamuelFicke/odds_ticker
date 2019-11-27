@@ -1,12 +1,16 @@
 from tkinter import *
 from SBRscraper import *
-from datetime import date
+from datetime import date, timedelta
 from time import *
 from tk_scrollbar import *
 
 import os
+import platform
 
-txt_path = '/home/pi/Projects/odds_ticker/'
+if(platform.system() == "Windows"):
+  txt_path = ''
+else:
+  txt_path = '/home/pi/Projects/odds_ticker/'
 
 second_update   = 1000
 hourly_update   = 1000*60*60
@@ -322,23 +326,22 @@ class ticker_top_gui:
   #Let User Know Updates are being pulled
     self.text_grid[1][1].set("UPDATING...")
     self.text_grid[2][1].set("NCAA Football")
-    
-    todays_date = str(date.today()).replace('-','')
+    day = timedelta(days=1)
+    todays_date = date.today()
 
   #Check the next few days for a college football game
     ncaaf_ranked = []
     count         = 0
-    ncaaf_date = int(todays_date)
     
     unranked_lst = []
     while(count < 7):
-      print("NCAAF...date=" + str(ncaaf_date))
+      ncaaf_date = str(todays_date+day*count).replace('-','')
+      print("NCAAF...date=" + ncaaf_date)
       try:
         [ncaaf_ranked,ncaaf_unranked] = get_odds(NCAAF,str(ncaaf_date))
       except:
         [ncaaf_ranked,ncaaf_unranked] = [[],[]]
       unranked_lst += ncaaf_unranked
-      ncaaf_date   += 1
       count        += 1
     self.ncaaf_data_list  = ncaaf_ranked + unranked_lst
     self.ncaaf_num_ranked = len(ncaaf_ranked)
@@ -358,12 +361,11 @@ class ticker_top_gui:
   #Check the next few days for an NFL game
     nfl_data_list = []
     count         = 0
-    nfl_date = int(todays_date)
     while(count < 7):
-      print("NFL...date=" + str(nfl_date))
+      nfl_date = str(todays_date+day*count).replace('-','')
+      print("NFL...date=" + nfl_date)
       nfl_data_list_day = get_odds(NFL,str(nfl_date))
       nfl_data_list += nfl_data_list_day
-      nfl_date += 1
       count    += 1
     self.nfl_data_list = nfl_data_list
     
@@ -382,7 +384,7 @@ class ticker_top_gui:
       write_txt(self.ncaab_data_list[self.ncaab_num_ranked:],"NCAAB_UNRANKED")
    
     
-  
+    print("Odds Retrieved Successfully!")
     
     self.fill_in_boxes(ALL_SPORTS)
     
